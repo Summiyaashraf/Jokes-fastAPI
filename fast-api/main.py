@@ -3,7 +3,6 @@ import random
 
 app = FastAPI()
 
-# Pakistani Jokes List
 pakistani_jokes = [
     {"setup": "Ek Pathan ne fridge mein pahar ki tasveer kyun lagayi?", "punchline": "Taake thanda rahe! 😂"},
     {"setup": "Biwi: Tum mujhe kahin le kyun nahi jate?", "punchline": "Shauhar: Theek hai, chalo kitchen! 😆"},
@@ -26,5 +25,5 @@ pakistani_jokes = [
 
 @app.get("/random_jokes")
 def get_joke():
-    return random.choice(pakistani_jokes)  # Ensure list is correct
+    return random.choice(pakistani_jokes) 
 
