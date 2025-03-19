@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 import random
+import uvicorn
+import os 
 
 app = FastAPI()
 
@@ -25,5 +27,10 @@ pakistani_jokes = [
 
 @app.get("/random_jokes")
 def get_joke():
-    return random.choice(pakistani_jokes) 
+    return random.choice(pakistani_jokes)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  
+    uvicorn.run(app, host="0.0.0.0", port=port)
+ 
 
